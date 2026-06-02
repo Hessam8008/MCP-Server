@@ -3,15 +3,9 @@ using ModelContextProtocol.Server;
 
 namespace SimpleMcpServer;
 
-[McpServerToolType, Description("Includes time and weather tools.")]
+[McpServerToolType, Description("Includes 'Time' tools.")]
 public static class TimeTool
 {
     [McpServerTool, Description("Returns the current UTC time.")]
-    public static string GetTime()
-        => DateTime.UtcNow.ToString("O");
-
-    [McpServerTool, Description("Returns the current temperature of the city.")]
-    public static string GetTemprature(string city)
-        => $"Temperature of the {city} is {Random.Shared.Next(10, 60)} °C (Centigrade)";
-
+    public static string GetUtcTime() => DateTime.UtcNow.ToString("O");
 }
